@@ -33,15 +33,18 @@ class MainActivity : ComponentActivity() {
                                 titleContentColor = MaterialTheme.colorScheme.primary,
                             ),
                             title = {
-                                Text("Small Top App Bar")
+                                Text("Sample App - Android Native")
                             }
                         )
                     },
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+//                    Greeting(
+//                        name = "Android",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+                    ColumnData(
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -58,18 +61,21 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ColumnData() {
-    Column {
-        Text(
-            text = "String 1"
-        )
-        Text(
-            text = "String 2"
-        )
-        Text(
-            text = "String 3"
-        )
-    }
+fun ColumnData(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier,
+        content = {
+            Text(
+                text = "String 1"
+            )
+            Text(
+                text = "String 2"
+            )
+            Text(
+                text = "String 3"
+            )
+        }
+    )
 }
 
 @Preview(showBackground = true)
